@@ -1,0 +1,24 @@
+USE DATN_Silver_WH
+GO
+
+CREATE OR ALTER PROCEDURE erp.sp_init_customer AS
+
+DROP TABLE IF EXISTS DATN_Silver_WH.erp.customer
+
+CREATE TABLE DATN_Silver_WH.erp.customer (
+    customer_id INT NOT NULL,
+    customer_erp_id INT,
+    customer_crm_id VARCHAR(10),
+	name VARCHAR(255),
+	email VARCHAR(255),
+    phone VARCHAR(100),
+    address VARCHAR(255),
+    birth_day DATE,
+    gender VARCHAR(1),
+    is_lead INT,
+    is_person INT,
+	modified_date DATETIME2(0)
+)
+GO
+
+-- EXEC erp.sp_init_customer
